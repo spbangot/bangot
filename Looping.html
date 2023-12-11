@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nth Factorial, Sum, and Average Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Nth Factorial, Sum, and Average Calculator</h2>
+
+  <label for="inputNumber">Enter a positive integer (n):</label>
+  <input type="number" id="inputNumber" min="0" style="text-align: right;">
+
+  <br><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <br><br>
+
+  <h3 id="factorialResult"></h3>
+  <h3 id="sumResult"></h3>
+  <h3 id="averageResult"></h3>
+
+  <a href="https://bangot.w3spaces-preview.com/index.html">Back to Home Page</a>
+  
+  <script>
+    function calculate() {
+      var n = parseInt(document.getElementById("inputNumber").value);
+      var factorial = 1;
+      var sum = 0;
+
+      // Calculate nth factorial using a While Loop
+      var i = 1;
+      while (i <= n) {
+        factorial *= i;
+        i++;
+      }
+
+      // Calculate the sum of the first n numbers using a Do While Loop
+      var j = 1;
+      do {
+        sum += j;
+        j++;
+      } while (j <= n);
+
+      // Calculate the average of the first n numbers using a For Loop
+      var average = 0;
+      for (var k = 1; k <= n; k++) {
+        average += k;
+      }
+      average /= n;
+
+      // Display results
+      document.getElementById("factorialResult").textContent = "Factorial of " + n + ": " + factorial;
+      document.getElementById("sumResult").textContent = "Sum of the first " + n + " numbers: " + sum;
+      document.getElementById("averageResult").textContent = "Average of the first " + n + " numbers: " + average.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
